@@ -22,7 +22,7 @@ close all;
 %% User inputs, file directories, and constants:
 
 % Importing the desired shot numbers:
-shots = [230622020,230622019]; d=1.0; xmin=0.004; xmax=0.026; ymin=0.036; ymax=0.06; sign_twin=1;  % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
+shots = [230622020,230622019]; d=1.0; xmin=0.004; xmax=0.026; ymin=0.036; ymax=0.06; sign_twin=-1;  % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
 % Fraction along z axis for each cross-section:
 cross_sect_frac = [.25 0.5 0.75]; 
 % Axial measurement location:
@@ -93,8 +93,8 @@ for shot_ind = 1:size(shots,1)
     x_twin_red_adj = x_twin_red - x_twin_red(end)/2+z_loc;
     
     % Save .mat file with line-integrated data for further analysis:
-    save(['H:\Reconstructions\',date,'\Ne_',num2str(shotnum_def),...
-        '.mat'],'x_twin_red_adj','y_twin_red_adj','den_int_full');
+%     save(['H:\Reconstructions\',date,'\Ne_',num2str(shotnum_def),'.mat'],'x_twin_red_adj','y_twin_red_adj','den_int_full');
+    save(['/Users/apple/Documents/ZaPHD/DHI',date,'/Ne_',num2str(shotnum_def),'.mat'],'x_twin_red_adj','y_twin_red_adj','den_int_full');
     
     % Identify number of cross sections:
     num_of_cross_sect = size(unwrapped,2);
@@ -521,8 +521,8 @@ for shot_ind = 1:size(shots,1)
     else
     end
     
-    %% Writing data to the ZaP-HD MDSplus data tree:
-    MDS_DHI_put(shotnum_def,shotnum_base,den_int_full,den_num_full,...
-        centroid_abs,d,xmin,xmax,ymin,ymax,sign_twin,...
-        x_twin_red_adj,y_twin_red_adj)
+%     %% Writing data to the ZaP-HD MDSplus data tree:
+%     MDS_DHI_put(shotnum_def,shotnum_base,den_int_full,den_num_full,...
+%         centroid_abs,d,xmin,xmax,ymin,ymax,sign_twin,...
+%         x_twin_red_adj,y_twin_red_adj)
 end     
