@@ -21,12 +21,12 @@ close all;
 
 %% User inputs, file directories, and constants:
 
-% Importing the desired shot numbers:
-shots = [230622020,230622019]; d=1.0; xmin=0.004; xmax=0.026; ymin=0.036; ymax=0.06; sign_twin=-1;  % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
+% Importing the desired shot numbers: (1st cell = def; 2nd cell = base)
+shots = [230724015,230724012]; d=1.3; xmin=0.0020; xmax=0.025; ymin=0.0518; ymax=0.0701; sign_twin=-1;  % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
 % Fraction along z axis for each cross-section:
 cross_sect_frac = [.25 0.5 0.75]; 
 % Axial measurement location:
-z_loc = 0.08; % [m]
+z_loc = 0.07; % [m]
 
 % Creating a directory for .mat file and image storage:
 date_ref = num2str(shots(1,1));
@@ -64,7 +64,7 @@ for shot_ind = 1:size(shots,1)
     
     % Plot and save the reconstructed phase:
     fig999 = figure(999);
-    imagesc(phase_x,phase_y,phase_diff);
+    imagesc(phase_x,phase_y,phase_diff); axis equal;
     saveas(fig999,[directory_save,'\phase_map_',num2str(...
         shotnum_def),'_',num2str(shotnum_base),'POS.tif']);
     
@@ -340,13 +340,13 @@ for shot_ind = 1:size(shots,1)
         den_num_full = den_num_full';
         den_int_full = den_int_full';
         
-        fnt = 24;
+        fnt = 12;
         
         % Plotting Ne (den_int_full):
         fig1 = figure(1);hold on;
         h11 = pcolor(x_twin_red_adj,y_twin_red_adj,den_int_full);
         set(h11,'edgecolor','none');
-        colormap jet
+        colormap jet;
         set(fig1,'position',[1290 520 560 420]);
         colorbar;
         xlim([x_twin_red_adj(1) x_twin_red_adj(end)]);
@@ -364,7 +364,7 @@ for shot_ind = 1:size(shots,1)
         set(h31,'edgecolor','none');
         h32 = scatter(x_twin_red_adj,y_twin_red_adj(centroid_abs),'k','.');
         set(h32,'sizedata',1000);
-        colormap jet
+        colormap jet; axis equal;
         set(fig3,'position',[1867         519         560         420]);
         colorbar;
         xlim([x_twin_red_adj(1) x_twin_red_adj(end)]);
@@ -470,13 +470,13 @@ for shot_ind = 1:size(shots,1)
             den_num_full_axial = den_num_full_axial';
             
             %% Plotting the number density adjusted for axial variation:
-            fig33 = figure(33);hold on; fnt = 24;
+            fig33 = figure(33);hold on; fnt = 12;
             h31 = pcolor(x_twin_red_adj,y_twin_red_adj,den_num_full_axial);
             set(h31,'edgecolor','none');
             h32 = scatter(x_twin_red_adj,y_twin_red_adj(centroid_abs),...
                 'k','.');
             set(h32,'sizedata',1000);
-            colormap jet
+            colormap jet; axis equal;
             set(fig33,'position',[1867 519 560 420]);
             colorbar;
             xlim([x_twin_red_adj(1) x_twin_red_adj(end)]);
