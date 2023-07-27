@@ -22,7 +22,7 @@ close all;
 %% User inputs, file directories, and constants:
 
 % Importing the desired shot numbers: (1st cell = def; 2nd cell = base)
-shots = [230724015,230724012]; d=1.3; xmin=0.0020; xmax=0.025; ymin=0.0518; ymax=0.0701; sign_twin=-1;  % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
+shots = [230724054,230724055]; d=1.3; xmin=0.002; xmax=0.030; ymin=0.050; ymax=0.075; sign_twin=1;  % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
 % Fraction along z axis for each cross-section:
 cross_sect_frac = [.25 0.5 0.75]; 
 % Axial measurement location:
@@ -348,7 +348,7 @@ for shot_ind = 1:size(shots,1)
         set(h11,'edgecolor','none');
         colormap jet;
         set(fig1,'position',[1290 520 560 420]);
-        colorbar;
+        colorbar; axis equal;
         xlim([x_twin_red_adj(1) x_twin_red_adj(end)]);
         ylim([y_twin_red_adj(1) y_twin_red_adj(end)]);
         title('Line-integrated electron density, N_e [m^{-2}]',...

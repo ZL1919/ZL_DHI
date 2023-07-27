@@ -45,9 +45,9 @@ rgb_green = 0.59;
 rgb_blue = 0.11;
 
 hol_def = double(hol_def_rgb(:,:,1).*rgb_red + hol_def_rgb(:,:,2).*...
-    rgb_green + hol_def_rgb(:,:,3).*rgb_blue);
+    rgb_green + hol_def_rgb(:,:,3).*rgb_blue)';
 hol_base = double(hol_base_rgb(:,:,1).*rgb_red + hol_base_rgb(:,:,2).*...
-    rgb_green + hol_base_rgb(:,:,3).*rgb_blue); % do not rot!
+    rgb_green + hol_base_rgb(:,:,3).*rgb_blue)';
 
 % If an eighth input = 1 is passed to the function, the hologram intensity
 % values are truncated within the range hol_max_cut:hol_min_cut.
