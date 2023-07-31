@@ -20,7 +20,7 @@ cf = boxcar2(c,width);
 
 % Inverting back to "phase space":
 phase_F = atan2(sf,cf);
-phase_f = phase_F(2*width+1:end-(2*width+1),:);
+phase_f = phase_F(:,:); % phase_f = phase_F(2*width+1:end-(2*width+1),:);
 
 % unwrapping the smoothed extracted twin image:
 unwrapped = zeros(size(phase_f,1),size(phase_f,2));
