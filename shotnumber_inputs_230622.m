@@ -12,5 +12,4 @@ function [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(import,vara
         ymin=0.036; 
         ymax=0.06; 
         sign_twin=-1;
-        shots = shots_tmp;     
 end

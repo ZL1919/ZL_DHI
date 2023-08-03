@@ -5,14 +5,13 @@
 % reconstruction settings in other DHI analysis codes.
 
 function [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(import,varargin)
-        shots = [230622020,230622019]; % NOT READY
-        d=1.0;
-        xmin=0.004; 
-        xmax=0.026; 
-        ymin=0.036; 
-        ymax=0.06; 
-        sign_twin=-1;
-        shots = shots_tmp;     
+        shots = [230724054,230724055]; % NOT READY
+        d=1.3;
+        xmin=0.002; % ??
+        xmax=0.030; % ??
+        ymin=0.050; % ??
+        ymax=0.075; % ??
+        sign_twin=-1; % ??
 end
 
 % zeroth order box

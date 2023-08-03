@@ -22,7 +22,7 @@ close all;
 %% User inputs, file directories, and constants:
 
 % Importing the desired shot numbers: (1st cell = def; 2nd cell = base)
-shots = [230724054,230724055]; d=1.3; xmin=0.002; xmax=0.030; ymin=0.050; ymax=0.075; sign_twin=1;  % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
+shots = [230724054,230724055]; d=1.5; xmin=0.056; xmax=0.078; ymin=0.003; ymax=0.034; sign_twin=-1; % ??  % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
 % Fraction along z axis for each cross-section:
 cross_sect_frac = [.25 0.5 0.75]; 
 % Axial measurement location:
@@ -83,13 +83,13 @@ for shot_ind = 1:size(shots,1)
     % (unwrapped is reduced in size because of boxcar smoothing):
     del_y = y_twin(2) - y_twin(1);
     del_x = x_twin(2) - x_twin(1);
-    y_twin_red = [0:del_y:del_y*(size(den_int_full,2)-1)];
+    y_twin_red = [0:del_y:del_y*(size(den_int_full,2)-1)]; % also shift coordinate to start at zero
     x_twin_red = [0:del_x:del_x*(size(den_int_full,1)-1)];
     
     % Adjusting the zero value of x_twin and y_twin so the origin is 
     % centered.  Can adjust here for when the hologram is not centered at 
     % 0 impact param.
-    y_twin_red_adj = (y_twin_red - y_twin_red(end)/2);
+    y_twin_red_adj = (y_twin_red - y_twin_red(end)/2); % shift coordinate again to center at zero
     x_twin_red_adj = x_twin_red - x_twin_red(end)/2+z_loc;
     
     % Save .mat file with line-integrated data for further analysis:
