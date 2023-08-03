@@ -45,9 +45,9 @@ rgb_green = 0.59;
 rgb_blue = 0.11;
 
 hol_def = double(hol_def_rgb(:,:,1).*rgb_red + hol_def_rgb(:,:,2).*...
-    rgb_green + hol_def_rgb(:,:,3).*rgb_blue)';
+    rgb_green + hol_def_rgb(:,:,3).*rgb_blue);
 hol_base = double(hol_base_rgb(:,:,1).*rgb_red + hol_base_rgb(:,:,2).*...
-    rgb_green + hol_base_rgb(:,:,3).*rgb_blue)';
+    rgb_green + hol_base_rgb(:,:,3).*rgb_blue);
 
 % If an eighth input = 1 is passed to the function, the hologram intensity
 % values are truncated within the range hol_max_cut:hol_min_cut.
@@ -90,12 +90,12 @@ y_max_ind = round(interp1(y,y_ind_vec,ymax));
 
 % Defining the x,y spatial coordinate vectors for the extracted twin image:
 x_twin = x(x_min_ind:x_max_ind);
-x_twin = x_twin(1:10:end);
+x_twin = x_twin(1:2:end); % x_twin = x_twin(1:10:end); % toss away some pixels to save time on abel invert
 y_twin = y(y_min_ind:y_max_ind);
-y_twin = y_twin(1:10:end);
+y_twin = y_twin(1:2:end); % y_twin = y_twin(1:10:end);
 
 twin_img = phase_diff(y_min_ind:y_max_ind,x_min_ind:x_max_ind);
-twin_img = twin_img(1:10:end,1:10:end);
+twin_img = twin_img(1:2:end,1:2:end); % twin_img = twin_img(1:10:end,1:10:end);
 
 % Smoothing and unwrapping the twin image:
 width = 8;

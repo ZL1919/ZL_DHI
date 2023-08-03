@@ -22,7 +22,7 @@ close all;
 %% User inputs, file directories, and constants:
 
 % Importing the desired shot numbers: (1st cell = def; 2nd cell = base)
-shots = [230724054,230724055]; d=1.5; xmin=0.056; xmax=0.078; ymin=0.003; ymax=0.034; sign_twin=-1; % ??  % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
+shots = [230724056,230724055]; d=1.3; xmin=0.002; xmax=0.027; ymin=0.050; ymax=0.071; sign_twin=-1; % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
 % Fraction along z axis for each cross-section:
 cross_sect_frac = [.25 0.5 0.75]; 
 % Axial measurement location:
