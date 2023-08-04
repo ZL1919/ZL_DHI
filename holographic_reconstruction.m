@@ -90,12 +90,12 @@ y_max_ind = round(interp1(y,y_ind_vec,ymax));
 
 % Defining the x,y spatial coordinate vectors for the extracted twin image:
 x_twin = x(x_min_ind:x_max_ind);
-x_twin = x_twin(1:2:end); % x_twin = x_twin(1:10:end); % toss away some pixels to save time on abel invert
+x_twin = x_twin(1:3:end); % x_twin = x_twin(1:10:end); % toss away some pixels to save computation time on abel invert
 y_twin = y(y_min_ind:y_max_ind);
-y_twin = y_twin(1:2:end); % y_twin = y_twin(1:10:end);
+y_twin = y_twin(1:3:end); % y_twin = y_twin(1:10:end);
 
 twin_img = phase_diff(y_min_ind:y_max_ind,x_min_ind:x_max_ind);
-twin_img = twin_img(1:2:end,1:2:end); % twin_img = twin_img(1:10:end,1:10:end);
+twin_img = twin_img(1:3:end,1:3:end); % twin_img = twin_img(1:10:end,1:10:end);
 
 % Smoothing and unwrapping the twin image:
 width = 8;

@@ -22,9 +22,9 @@ close all;
 %% User inputs, file directories, and constants:
 
 % Importing the desired shot numbers: (1st cell = def; 2nd cell = base)
-shots = [230724056,230724055]; d=1.3; xmin=0.002; xmax=0.027; ymin=0.050; ymax=0.071; sign_twin=-1; % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
+shots = [232726021,232726019]; d=1.1; xmin=0.0035; xmax=0.0275; ymin=0.0350; ymax=0.0525; sign_twin=1; % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
 % Fraction along z axis for each cross-section:
-cross_sect_frac = [.25 0.5 0.75]; 
+cross_sect_frac = [0.25 0.5 0.75]; 
 % Axial measurement location:
 z_loc = 0.07; % [m]
 
@@ -64,7 +64,7 @@ for shot_ind = 1:size(shots,1)
     
     % Plot and save the reconstructed phase:
     fig999 = figure(999);
-    imagesc(phase_x,phase_y,phase_diff); axis equal;
+    imagesc(phase_x,phase_y,phase_diff); axis equal; xlim([0,inf]); ylim([0,inf]); 
     saveas(fig999,[directory_save,'\phase_map_',num2str(...
         shotnum_def),'_',num2str(shotnum_base),'POS.tif']);
     
@@ -359,14 +359,14 @@ for shot_ind = 1:size(shots,1)
         set(gca,'xtick',[0.145 0.15 0.155]);
         
         % Plotting number density not adjusted for axial variation:
-        fig3 = figure(3);hold on;
+        fig3 = figure(3); hold on;
         h31 = pcolor(x_twin_red_adj,y_twin_red_adj,den_num_full);
         set(h31,'edgecolor','none');
         h32 = scatter(x_twin_red_adj,y_twin_red_adj(centroid_abs),'k','.');
-        set(h32,'sizedata',1000);
-        colormap jet; axis equal;
+        set(h32,'sizedata',1);
+        colormap jet;
         set(fig3,'position',[1867         519         560         420]);
-        colorbar;
+        colorbar; axis equal;
         xlim([x_twin_red_adj(1) x_twin_red_adj(end)]);
         ylim([y_twin_red_adj(1) y_twin_red_adj(end)]);
         line([cross_sect(1)*del_x+x_0 cross_sect(1)*del_x+x_0],...
@@ -475,7 +475,7 @@ for shot_ind = 1:size(shots,1)
             set(h31,'edgecolor','none');
             h32 = scatter(x_twin_red_adj,y_twin_red_adj(centroid_abs),...
                 'k','.');
-            set(h32,'sizedata',1000);
+            set(h32,'sizedata',1);
             colormap jet; axis equal;
             set(fig33,'position',[1867 519 560 420]);
             colorbar;
