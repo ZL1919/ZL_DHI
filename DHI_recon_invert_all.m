@@ -16,13 +16,13 @@
 % function MDS_DHI_put.m to store the density data alongside reconstruction
 % settings in ZaP-HD's MDSplus data tree.
 
-clear all;
+clear; % clear all;
 close all;
 
 %% User inputs, file directories, and constants:
 
 % Importing the desired shot numbers: (1st cell = def; 2nd cell = base)
-shots = [232726021,232726019]; d=1.1; xmin=0.0035; xmax=0.0275; ymin=0.0350; ymax=0.0525; sign_twin=1; % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
+shots = [230726054,230726051]; d=1.3; xmin=0.0015; xmax=0.0260; ymin=0.0520; ymax=0.0700; sign_twin=1; % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
 % Fraction along z axis for each cross-section:
 cross_sect_frac = [0.25 0.5 0.75]; 
 % Axial measurement location:
@@ -64,7 +64,7 @@ for shot_ind = 1:size(shots,1)
     
     % Plot and save the reconstructed phase:
     fig999 = figure(999);
-    imagesc(phase_x,phase_y,phase_diff); axis equal; xlim([0,inf]); ylim([0,inf]); 
+    imagesc(phase_x,phase_y,phase_diff); axis equal; xlim([0,inf]); ylim([0,inf]);
     saveas(fig999,[directory_save,'\phase_map_',num2str(...
         shotnum_def),'_',num2str(shotnum_base),'POS.tif']);
     

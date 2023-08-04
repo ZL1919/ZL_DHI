@@ -5,10 +5,10 @@
 % reconstruction settings in other DHI analysis codes.
 
 function [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(import,varargin)
-        shots = [230726054,230726051];
+        shots = [230726054,230726051]; 
         d=1.3;
         xmin=0.0015;
-        xmax=0.0270;
+        xmax=0.0260;
         ymin=0.0520;
         ymax=0.0700;
         sign_twin=1; % okay
