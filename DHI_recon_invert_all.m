@@ -22,10 +22,10 @@ close all;
 %% User inputs, file directories, and constants:
 
 % Importing the desired shot numbers: (1st cell = def; 2nd cell = base)
-shots = [230726054,230726051]; d=1.3; xmin=0.0015; xmax=0.0260; ymin=0.0520; ymax=0.0700; sign_twin=1; % [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
+[shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
 % Fraction along z axis for each cross-section:
 cross_sect_frac = [0.25 0.5 0.75]; 
-% Axial measurement location:
+% Axial measurement location [IMPORTANT!!!]:
 z_loc = 0.07; % [m]
 
 % Creating a directory for .mat file and image storage:
@@ -94,7 +94,7 @@ for shot_ind = 1:size(shots,1)
     
     % Save .mat file with line-integrated data for further analysis:
 %     save(['H:\Reconstructions\',date,'\Ne_',num2str(shotnum_def),'.mat'],'x_twin_red_adj','y_twin_red_adj','den_int_full');
-    save(['/Users/apple/Documents/ZaPHD/DHI',date,'/Ne_',num2str(shotnum_def),'.mat'],'x_twin_red_adj','y_twin_red_adj','den_int_full');
+    save(['/Users/apple/Documents/ZaPHD/DHI',date,'/Ne_',num2str(shotnum_def),'_',num2str(shotnum_base),'.mat'],'x_twin_red_adj','y_twin_red_adj','den_int_full');
     
     % Identify number of cross sections:
     num_of_cross_sect = size(unwrapped,2);
@@ -488,21 +488,21 @@ for shot_ind = 1:size(shots,1)
             set(gca,'xtick',[0.145 0.15 0.155]);
             legend(h32,'centroid');
             
-            % Saving figures as images:
+            % Saving figures as images: % depends on your OS, use correct \ or /
             if sign_twin > 0
                 saveas(fig1,[directory_save,'\den_int_contour_',...
-                    num2str(shotnum_def),'_',num2str(shotnum_base),...
-                    'POS.tif']);
+                    num2str(shotnum_def),'_',num2str(shotnum_base),'POS.tif']);
+                saveas(fig1,[directory_save,'/den_int_contour_',num2str(shotnum_def),'_',num2str(shotnum_base),'POS.fig']);
                 saveas(fig33,[directory_save,'\den_num_contour_',...
-                    num2str(shotnum_def),'_',num2str(shotnum_base),...
-                    'POS.tif']);
+                    num2str(shotnum_def),'_',num2str(shotnum_base),'POS.tif']);
+                saveas(fig33,[directory_save,'/den_num_contour_',num2str(shotnum_def),'_',num2str(shotnum_base),'POS.fig']);
             else
                 saveas(fig1,[directory_save,'\den_int_contour_',...
-                    num2str(shotnum_def),'_',num2str(shotnum_base),...
-                    '.tif']);
+                    num2str(shotnum_def),'_',num2str(shotnum_base),'.tif']);
+                saveas(fig1,[directory_save,'/den_int_contour_',num2str(shotnum_def),'_',num2str(shotnum_base),'.fig']);
                 saveas(fig33,[directory_save,'\den_num_contour_',...
-                    num2str(shotnum_def),'_',num2str(shotnum_base),...
-                    '.tif']);
+                    num2str(shotnum_def),'_',num2str(shotnum_base),'.tif']);
+                saveas(fig33,[directory_save,'/den_num_contour_',num2str(shotnum_def),'_',num2str(shotnum_base),'.fig']);
             end
             
             for k = 1:num_of_cross_sect

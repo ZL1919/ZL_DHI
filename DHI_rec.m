@@ -19,7 +19,7 @@ ximg = linspace(0,res*M,M);
 yimg = linspace(0,res*N,N);
 
 %% Applying windowing to the holograms:
-[hol_def,hol_base] = hyperbolic_window(hol_def,hol_base);
+[hol_def,hol_base] = hyperbolic_window(hol_def,hol_base); % attenuate edge of the photo "to remove Gibbs phenomena in the resulting recontructions"
 % [hol_def,hol_base] = DC_suppression(hol_def,hol_base,M,N);
 
 %% Reconstruction with Fresnel method:
