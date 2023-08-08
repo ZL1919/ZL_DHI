@@ -15,20 +15,19 @@ for shot_ind = 1:size(shots,1)
     shot_def = SN_def(7:end);
     shot_base = SN_base(7:end);
     
-    date_save = num2str(str2double(date_def)+8000); % fiction month + 8month to save comb photo
-    directory_save = ['/Users/apple/Documents/ZaPHD/DHI',date_save];
-    mkdir(['/Users/apple/Documents/ZaPHD/DHI',date_save]);
+    directory_save = ['/Users/apple/Documents/ZaPHD/DHI',date_def,'comb_fig'];
+    mkdir(['/Users/apple/Documents/ZaPHD/DHI',date_def,'comb_fig']);
     
     %First Figure
     h1 = openfig(['/Users/apple/Documents/ZaPHD/DHI',date_def,'/den_int_contour_',date_def,shot_def,'_',date_base,shot_base,'POS.fig'],'reuse'); % open figure
     ax1 = gca; % get handle to axes of figure
-    pause(0.1)
+    pause(0.2)
     %Second Figure
     date_def2 = num2str(str2double(date_def)+2000);
     date_base2 = num2str(str2double(date_base)+2000);
     h2 = openfig(['/Users/apple/Documents/ZaPHD/DHI',date_def2,'/den_int_contour_',date_def2,shot_def,'_',date_base2,shot_base,'POS.fig'],'reuse');
     ax2 = gca;
-    pause(0.1)
+    pause(0.2)
     h3 = figure; hold on %create new figure
     s1 = subplot(1,1,1); %create and get handle to the subplot axes
     fig1 = get(ax1,'children'); %get handle to all the children in the figure
