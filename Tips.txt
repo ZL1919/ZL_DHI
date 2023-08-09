@@ -1,0 +1,25 @@
+Zhangsheng Lian's 2-chord DHI code, tips.
+Largely based on Mike Ross's code
+Contains minimum code to process DHI photos.
+You can add more Mike's or Ellie's codes if you find them helpful at some point.
+
+In my thesis, laser beams are at about P7 and P14.
+In my file naming, fictional month (+20month) is used for files at P14, to minimizing editing on Mike's code.
+
+Feel free change directory and some file naming convention to make the code work on your computer.
+
+In holographic_reconstruction.m, before smoothing and unwrapping, half of pixels are tossed away to save computer time. If you got a good CPU, use full resolution.
+
+Comparing to Mike's code, I cancelled some matrix transpose during holographic reconstruction. Beware of this difference and know you camera orentation.
+
+hyperbolic_window.m attenuates the pixels near the edge of the photo "remove Gibbs phenomena". This reduces the useful length from the sensor by about 10%. You can try avoid hyperbolic_window.m and see if it sucks.
+
+smooth_unwrap.m crops out some pixels in the upper and lower edge of 1st-order image. Cropping out some noisy pixels is necessary for unwrapping. It might be possible to change the code to crop out some pixels in the left and right edge instead.
+
+Mike had MDSplus integration. I avoided all of it, because my didn't/couldn't setup MDSplus on my laptop. It is up to you to revive MDSplus integration.
+
+comb_den_int_fig.m can combine two line-integrated density figure together. It uses the fictional month convention. Feel free to update the code that serves you the best.
+
+
+DISS_DHI_basicRecon.m is not updated to the camera spec, but is contained in the repository for reference.
+DISS_shotnumber_inputs.m has MDSplus integration and is unused. It is contained in the repository for reference.

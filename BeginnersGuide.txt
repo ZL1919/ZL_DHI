@@ -1,0 +1,35 @@
+Zhangsheng Lian's 2-chord DHI code, beginner's guide.
+Largely based on Mike Ross's code.
+
+Define appropriate file name and directory in DHI_recon_invert_all.m and holographic_reconstruction.m. Be a bit patient.
+
+Start with DHI_recon_invert_all.m and shotnumber_inputs.m
+Before mass processing.
+·In shotnumber_inputs.m 
+Define 2 shot numbers (1 baseline, 1 plasma), reconstruction distance, and boundary of 1st-order image.
+If you are not familiar with the code and what a photo demo, start with what's in shotnumber_inputs_demo.m and corresponding photo files.
+If you are not familiar with the code and what to use your own photo, try start with d=1.5; xmin=0.0020; xmax=0.0110; ymin=0.0020; ymax=0.0110; sign_twin=1;. These numbers are probably wrong, but probably keeps the code running.
+·In DHI_recon_invert_all.m 
+You can place a breakpoint at line 107 for now.
+Set your z_loc.
+Run DHI_recon_invert_all.m; you should get the reconstructed phase map.
+Observe 1st-order image and 0th-order image. Adjust reconstruction distance, and run the code again. Repeat such process until the these images are clearly separate but not too far away from each other.
+Update xmin, xmax, ymin, ymax, so that these number box out a 1st-order image.
+Clear the break point. 
+
+Run DHI_recon_invert_all.m and observe line-integrated density plot.
+If the gradient of line-integrated density makes sense, then sign_twin is correct.
+If the gradient makes no sense, then flip sign_twin, and run the code again.
+If the gradient makes no sense regardless of sign_twin, then your photo probably didn't capture the pinch, try a different photo.
+
+Once the gradient makes sense, observe the (ordinary) number density plot and see if it makes sense.
+
+If everything looks fine, then you are ready to do mass processing.
+
+...
+
+
+
+
+
+

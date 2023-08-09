@@ -11,6 +11,7 @@ function [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(import,vara
         ymin=0.0520;
         ymax=0.0700;
         sign_twin=1; % okay
+        % (1st cell = def; 2nd cell = base)
         shots = [230726007,230726006;
                  230726007,230726009;
                  230726008,230726006;

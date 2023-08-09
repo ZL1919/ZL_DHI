@@ -1,7 +1,9 @@
-% put 2 density figures at different P location into the same figure
+% comb_den_int_fig.m
+% Author: Zhangsheng Lian
+% put 2 figures at different P location into the same figure
+% use fictional month for a different P location here
 % ref: https://www.mathworks.com/matlabcentral/answers/101806-how-can-i-insert-my-matlab-figure-fig-files-into-multiple-subplots
 
-close all
 [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(2,1);
 
 for shot_ind = 1:size(shots,1)
@@ -23,7 +25,7 @@ for shot_ind = 1:size(shots,1)
     ax1 = gca; % get handle to axes of figure
     pause(0.2)
     %Second Figure
-    date_def2 = num2str(str2double(date_def)+2000);
+    date_def2 = num2str(str2double(date_def)+2000); % again I use fictional month for a different P location.
     date_base2 = num2str(str2double(date_base)+2000);
     h2 = openfig(['/Users/apple/Documents/ZaPHD/DHI',date_def2,'/den_int_contour_',date_def2,shot_def,'_',date_base2,shot_base,'POS.fig'],'reuse');
     ax2 = gca;
