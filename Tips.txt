@@ -18,8 +18,3 @@ smooth_unwrap.m crops out some pixels in the upper and lower edge of 1st-order i
 
 Mike had MDSplus integration. I avoided all of it, because my didn't/couldn't setup MDSplus on my laptop. It is up to you to revive MDSplus integration.
 
-comb_den_int_fig.m can combine two line-integrated density figure together. It uses the fictional month convention. Feel free to update the code that serves you the best.
-
-
-DISS_DHI_basicRecon.m is not updated to the camera spec, but is contained in the repository for reference.
-DISS_shotnumber_inputs.m has MDSplus integration and is unused. It is contained in the repository for reference.

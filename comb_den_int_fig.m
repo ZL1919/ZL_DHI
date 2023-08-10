@@ -17,11 +17,11 @@ for shot_ind = 1:size(shots,1)
     shot_def = SN_def(7:end);
     shot_base = SN_base(7:end);
     
-    directory_save = ['/Users/apple/Documents/ZaPHD/DHI',date_def,'comb_fig'];
-    mkdir(['/Users/apple/Documents/ZaPHD/DHI',date_def,'comb_fig']);
+    directory_save = ['/Users/apple/Documents/ZaPHD/DHI',date_def,'comb_den_int_fig'];
+    mkdir(['/Users/apple/Documents/ZaPHD/DHI',date_def,'comb_den_int_fig']);
     
     %First Figure
-    h1 = openfig(['/Users/apple/Documents/ZaPHD/DHI',date_def,'/den_int_contour_',date_def,shot_def,'_',date_base,shot_base,'POS.fig'],'reuse'); % open figure
+    h1 = openfig(['/Users/apple/Documents/ZaPHD/DHI',date_def,'/den_int_contour_',date_def,shot_def,'_',date_base,shot_base,'POS.fig'],'reuse');
     ax1 = gca; % get handle to axes of figure
     pause(0.2)
     %Second Figure

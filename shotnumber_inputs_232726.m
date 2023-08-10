@@ -8,7 +8,7 @@ function [shots,d,xmin,xmax,ymin,ymax,sign_twin] = shotnumber_inputs(import,vara
         d=1.1;
         xmin=0.0040;
         xmax=0.0275;
-        ymin=0.0350;
+        ymin=0.0350; 
         ymax=0.0525;
         sign_twin=1; % okay
         % +20month for P14

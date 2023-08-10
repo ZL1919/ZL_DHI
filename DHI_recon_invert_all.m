@@ -26,7 +26,7 @@ close all;
 % Fraction along z axis for each cross-section:
 cross_sect_frac = [0.25 0.5 0.75]; 
 % Axial measurement location [IMPORTANT!!!]:
-z_loc = 0.07; % [m]
+z_loc = 0.14; % [m]
 
 % Creating a directory for .mat file and image storage:
 date_ref = num2str(shots(1,1));
@@ -340,7 +340,7 @@ for shot_ind = 1:size(shots,1)
         den_num_full = den_num_full';
         den_int_full = den_int_full';
         
-        fnt = 12;
+        fnt = 16;
         
         % Plotting Ne (den_int_full):
         fig1 = figure(1);hold on;
@@ -351,7 +351,7 @@ for shot_ind = 1:size(shots,1)
         colorbar; axis equal;
         xlim([x_twin_red_adj(1) x_twin_red_adj(end)]);
         ylim([y_twin_red_adj(1) y_twin_red_adj(end)]);
-        title('Line-integrated electron density, N_e [m^{-2}]',...
+        title('Line-integrated e^- density, N_e [m^{-2}]',...
             'fontsize',fnt);
         xlabel('Axial distance [m]','fontsize',fnt);
         ylabel('Impact parameter [m]','fontsize',fnt);
@@ -470,7 +470,7 @@ for shot_ind = 1:size(shots,1)
             den_num_full_axial = den_num_full_axial';
             
             %% Plotting the number density adjusted for axial variation:
-            fig33 = figure(33);hold on; fnt = 12;
+            fig33 = figure(33);hold on; fnt = 16;
             h31 = pcolor(x_twin_red_adj,y_twin_red_adj,den_num_full_axial);
             set(h31,'edgecolor','none');
             h32 = scatter(x_twin_red_adj,y_twin_red_adj(centroid_abs),...
