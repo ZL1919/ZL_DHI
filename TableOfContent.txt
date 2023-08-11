@@ -3,10 +3,9 @@ Largely based on Mike Ross's code
 Contains minimum code to process DHI photos.
 You can add more Mike's or Ellie's codes if you find them helpful at some point.
 
-
-
-comb_den_int_fig.m can combine two line-integrated density figure together. It uses the fictional month convention. Feel free to update the code that serves you the best.
+comb_den_int_fig.m combines two line-integrated density figure together. It uses the fictional month convention. Feel free to update the code that serves you the best.
+comb_den_num_fig.m works in a similar way.
 
 DISS_DHI_basicRecon.m is not updated to the camera spec, but is contained in the repository for reference.
-DISS_shotnumber_inputs.m and shot_base_pair.m have MDSplus integration and is unused. It is contained in the repository for reference.
+DISS_shotnumber_inputs.m, shot_base_pair.m, and MDS_DHI_put.m have MDSplus integration and are currently not used. They are contained in the repository for reference.
 
