@@ -99,8 +99,8 @@ for shot_ind = 1:size(shots,1)
     % Identify number of cross sections:
     num_of_cross_sect = size(unwrapped,2);
     
-    % Identify number of centroids:
-    num_of_centroids = 10;
+    % Identify number of centroids: % more like number of attempts to search for a density centroid in the context of Abel inversion 
+    num_of_centroids = 10; % we might want to increase this number as well since we incrased 1st image resolution.
     
     % Identify number of n_edge values:
     num_of_n_edge = 15;
