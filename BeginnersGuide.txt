@@ -26,10 +26,6 @@ Once the gradient makes sense, observe the (ordinary) number density plot and se
 
 If everything looks fine, then you are ready to do mass processing.
 
-...
-
-
-
-
+... (to be continued)
 
 

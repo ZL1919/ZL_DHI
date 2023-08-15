@@ -16,5 +16,5 @@ hyperbolic_window.m attenuates the pixels near the edge of the photo "remove Gib
 
 smooth_unwrap.m crops out some pixels in the upper and lower edge of 1st-order image. Cropping out some noisy pixels is necessary for unwrapping. It might be possible to change the code to crop out some pixels in the left and right edge instead.
 
-Mike had MDSplus integration. I avoided all of it, because my didn't/couldn't setup MDSplus on my laptop. It is up to you to revive MDSplus integration.
+Mike had MDSplus integration. I avoided all of it, because I didn't/couldn't setup MDSplus on my laptop. It is up to you to revive MDSplus integration.
 

@@ -3,6 +3,10 @@ Largely based on Mike Ross's code
 Contains minimum code to process DHI photos.
 You can add more Mike's or Ellie's codes if you find them helpful at some point.
 
+DHI_recon_invert_all.m the main code to run DHI.
+
+shotnumber_inputs.m enter your shot number pairs, reconstruction image, twin pair, and 1st order diffraction image coordinate here.
+
 comb_den_int_fig.m combines two line-integrated density figure together. It uses the fictional month convention. Feel free to update the code that serves you the best.
 comb_den_num_fig.m works in a similar way.
 
