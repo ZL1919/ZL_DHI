@@ -356,7 +356,7 @@ for shot_ind = 1:size(shots,1)
         xlabel('Axial distance [m]','fontsize',fnt);
         ylabel('Impact parameter [m]','fontsize',fnt);
         set(gca,'fontsize',fnt);
-        set(gca,'xtick',[0.145 0.15 0.155]);
+%         set(gca,'xtick',[0.145 0.15 0.155]); % set specific tick values on x-axis
         
         % Plotting number density not adjusted for axial variation:
         fig3 = figure(3); hold on;
@@ -387,7 +387,7 @@ for shot_ind = 1:size(shots,1)
         xlabel('Axial distance [m]','fontsize',fnt);
         ylabel('Impact parameter [m]','fontsize',fnt);
         set(gca,'fontsize',fnt);
-        set(gca,'xtick',[0.145 0.15 0.155]);
+%         set(gca,'xtick',[0.145 0.15 0.155]); % set specific tick values on x-axis
         
         %% Adjusting number density to account for axial variation of phase
         if exist('centroid') % do not adjust for axial density variation 
